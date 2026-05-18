@@ -1,12 +1,14 @@
 import os
 import random
 import sqlite3
+import tempfile
 
 from fastmcp import FastMCP
 
 mcp = FastMCP(name="Demo Server")
 
-DB_PATH = os.path.join(os.path.dirname(__file__), "expenses.db")
+TEMP_DIR = tempfile.gettempdir()
+DB_PATH = os.path.join(TEMP_DIR, "expenses.db")
 CATEGORY_TYPE = os.path.join(os.path.dirname(__file__), "categories.json")
 
 
