@@ -1,7 +1,7 @@
 [project]
 name = "mcp-sample"
-version = "0.1.0"
-description = "Add your description here"
+version = "0.1.1"
+description = "This is a sample mcp server. It explains how to implemement and execute a MCP server locally and remotely."
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
