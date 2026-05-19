@@ -5,6 +5,7 @@ description = "This is a sample mcp server. It explains how to implemement and e
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "aiosqlite>=0.22.1",
     "fastmcp>=3.3.1",
     "pysqlite3>=0.6.0",
 ]
