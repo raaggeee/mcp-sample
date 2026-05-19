@@ -14,6 +14,7 @@ CATEGORY_TYPE = os.path.join(os.path.dirname(__file__), "categories.json")
 
 def init_db():
     with sqlite3.connect(DB_PATH) as c:
+        c.execute("PRAGMA journal_mode=WAL")
         c.execute(
             """
             CREATE TABLE IF NOT EXISTS expenses(
@@ -25,6 +26,15 @@ def init_db():
             )
             """
         )
+
+        # c.execute(
+        #     """
+        #     INSERT INTO expenses(exp_name, exp_type, exp_amt, exp_note) VALUES ("petrol", "fuel", 1000, "got 100 octane fuel")
+        #     """
+        # )
+
+
+init_db()
 
 
 @mcp.tool()
@@ -120,5 +130,4 @@ def categories():
 
 
 if __name__ == "__main__":
-    init_db()
     mcp.run(transport="http", host="0.0.0.0", port=8000)
